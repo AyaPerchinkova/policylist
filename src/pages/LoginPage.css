@@ -1,0 +1,103 @@
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #004cbe, #0061c3, #f0f7fb); /* Dark blue to navy blue to sky blue */
+  background-size: 200% 200%; /* For animation */
+  animation: gradient-animation 6s ease infinite; /* Smooth gradient animation */
+  color: white;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0px; /* Space between the login box and info box */
+  width: 60%; /* Adjust container width */
+}
+
+.login-box{
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  color: black;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+  text-align: center;
+  width: 200px; /* Match the width of the register-box */
+  flex: 1; /* Ensure equal size */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effect */
+}
+
+.login-box:hover,
+.info-box:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.login-box h2{
+  margin-bottom: 20px;
+  color: #0d47a1; /* Match the darker blue theme */
+}
+
+.info-box h2 {
+  margin-bottom: 20px;
+  color: white; /* Match the gradient theme */
+}
+
+.info-box {
+  background: linear-gradient(135deg, #1e90ff, #4682b4); /* Blue gradient background */
+  color: white; /* Ensure text is readable on the gradient */
+}
+
+
+  .login-button {
+    background-color: #1e3c72; /* Same vibrant blue as the register button */
+    color: white; /* White text for contrast */
+    border: none;
+    padding: 10px 20px; /* Adjust padding for a better size */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Adjust font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+    width: 100%; /* Make the button full-width */
+    font-weight: bold; /* Bold text for emphasis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.login-button:hover {
+  background-color: #2a5298;
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.login-button:active {
+  background-color: #163a5f; /* Even darker blue when clicked */
+  transform: scale(0.98); /* Slight shrink effect on click */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow on click */
+}

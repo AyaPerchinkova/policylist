@@ -1,0 +1,12 @@
+.highlighted-row {
+    animation: highlight-animation 2s ease-in-out;
+  }
+  
+  @keyframes highlight-animation {
+    0% {
+      background-color: #ffff99; /* Light yellow */
+    }
+    100% {
+      background-color: transparent;
+    }
+  }

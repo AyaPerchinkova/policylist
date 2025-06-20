@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Logout Page</title>
+    <script
+      id="aya-ui-bootstrap"
+      src="https://ui5.aya.com/resources/aya-ui-core.js"
+      data-aya-ui-theme="sap_horizon"
+      data-aya-ui-libs="aya.m, aya.f"
+      data-aya-ui-async="true"
+    ></script>
+    <script>
+      aya.ui.getCore().attachInit(function () {
+        aya.ui.require(
+          ["aya/m/Page", "aya/m/Button", "aya/f/IllustratedMessage", "aya/f/library", "aya/m/App"],
+          function (Page, Button, IllustratedMessage, fLibrary, App) {
+            var IllustratedMessageType = fLibrary.IllustratedMessageType;
+
+            var oPage = new Page({
+              showHeader: false,
+              content: [
+                new IllustratedMessage({
+                  illustrationType: IllustratedMessageType.SignOut,
+                  additionalContent: [
+                    new Button({
+                      text: "Sign In",
+                      type: "Emphasized",
+                      press: function () {
+                        window.open("/", "_self");
+                      },
+                    }).addStyleClass("sapUiLargeMarginTop sapUiMediumMarginHorizontal"),
+                  ],
+                }).addStyleClass("sapUiLargeMargin"),
+              ],
+            });
+
+            var oApp = new App("myApp", {
+              initialPage: "logoutPage",
+            });
+
+            oApp.addPage(oPage);
+            oApp.placeAt("content");
+          },
+        );
+      });
+    </script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+      }
+
+      .sapUiLargeMargin {
+        margin: 2rem;
+      }
+
+      .sapUiLargeMarginTop {
+        margin-top: 2rem;
+      }
+
+      .sapUiMediumMarginHorizontal {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #content {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body class="sapUiBody">
+    <div id="content"></div>
+  </body>
+</html>

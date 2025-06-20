@@ -1,0 +1,15 @@
+.custom-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9); /* Adjust the opacity to make the background visible */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add a shadow to make the dialog stand out */
+    border-radius: 8px; /* Add rounded corners */
+    padding: 20px; /* Add padding for better spacing */
+}
+  
+.custom-dialog::part(content) {
+    overflow: visible;
+}

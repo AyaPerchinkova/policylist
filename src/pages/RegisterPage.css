@@ -1,0 +1,187 @@
+.register-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #004cbe, #0061c3, #f0f7fb); /* Dark blue to navy blue to sky blue */
+  background-size: 200% 200%; /* For animation */
+  animation: gradient-animation 6s ease infinite; /* Smooth gradient animation */
+  color: white;
+}
+
+  
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+  .logo-container {
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    width: 150px;
+    height: auto;
+  }
+  
+  .register-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    color: black;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+    text-align: center;
+    width: 400px; /* Adjust width */
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effect */
+  }
+  
+  .register-box:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  }
+  .register-box h2 {
+    margin-bottom: 20px;
+    color: #0d47a1; /* Match the darker blue theme */
+  }
+  
+  
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  .form-group label {
+    font-weight: bold;
+    color: #0d47a1; /* Match the darker blue theme */
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow to input fields */
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+  }
+  .form-group input:focus {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on focus */
+    outline: none; /* Remove default outline */
+  }
+  
+  .register-button {
+    background-color: #1e3c72;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .register-button:hover {
+    background-color: #2a5298;
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+  
+  .error {
+    color: #ff4d4d;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .success {
+    color: #28a745;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  p {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  p a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  p a:hover {
+    text-decoration: underline;
+  }
+  .input-with-icon {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 10px; /* Adjust padding for shorter height */
+    background-color: #fff;
+    height: 35px; /* Set a fixed height for shorter input boxes */
+    flex: 1;
+
+  }
+  
+  .input-icon {
+    margin-right: 10px; /* Space between the icon and the input text */
+    color: #888; /* Icon color */
+  }
+  
+  .input-with-icon input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 5px;
+    font-size: 16px;
+  }
+
+  .register-form {
+    padding: 20px; /* Adjust padding for consistency */
+  }
+  
+  .register-welcome {
+    flex: 1;
+    padding: 40px; /* Increased padding for better spacing */
+  }
+
+  .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0px; /* Reduced gap for closer spacing */
+  }
+
+
+  .info-box {
+    background: linear-gradient(135deg, #f0f7fb, #004cbe); /* Blue gradient background */
+    color: white; /* Ensure text is readable on the gradient */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow to info box */
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .info-box h2 {
+    margin-bottom: 20px;
+  }
+  
+  .info-box p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+

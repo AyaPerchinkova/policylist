@@ -1,0 +1,12 @@
+{
+  "shell": {
+    "title": "Policy Management",
+    "theme": "Theme",
+    "logOut": "Log Out",
+    "horizonMorning": "Horizon Morning",
+    "horizonEvening": "Horizon Evening",
+    "horizonHCB": "Horizon HCB",
+    "quartzLight": "Quartz Light",
+    "quartzDark": "Quartz Dark"
+  }
+}

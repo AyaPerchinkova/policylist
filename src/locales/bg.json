@@ -1,0 +1,12 @@
+{
+  "shell": {
+    "title": "Управление на политиките",
+    "theme": "Тема",
+    "logOut": "Изход",
+    "horizonMorning": "Хоризонт Сутрин",
+    "horizonEvening": "Хоризонт Вечер",
+    "horizonHCB": "Хоризонт HCB",
+    "quartzLight": "Кварц Светъл",
+    "quartzDark": "Кварц Тъмен"
+  }
+}
