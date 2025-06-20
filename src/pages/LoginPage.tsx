@@ -4,8 +4,11 @@ import { loginUser } from './listSlice'; // Adjust the import based on your actu
 import './LoginPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 
 const LoginPage: React.FC = () => {
+  const { t } = useTranslation();
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
@@ -39,17 +42,17 @@ const LoginPage: React.FC = () => {
   <div className="login-container">
     {/* Login Box */}
     <div className="login-box">
-      <h2>Login</h2>
-      {error && <p className="error">{error}</p>}
+    <h2>{t("login.title")}</h2>
+    {error && <p className="error">{error}</p>}
       <form onSubmit={handleLogin}>
         <div className="form-group">
-          <label htmlFor="username">Username</label>
-          <div className="input-with-icon">
+        <label htmlFor="username">{t("login.username")}</label>
+        <div className="input-with-icon">
                 <FontAwesomeIcon icon={faUser} className="input-icon" />
                 <input
                   type="text"
                   id="username"
-                  placeholder="Enter your username"
+                  placeholder={t("login.EnterUsername")}
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   required
@@ -57,28 +60,28 @@ const LoginPage: React.FC = () => {
               </div>
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <div className="input-with-icon">
+        <label htmlFor="password">{t("login.password")}</label>
+        <div className="input-with-icon">
                 <FontAwesomeIcon icon={faLock} className="input-icon" />
                 <input
                   type="password"
                   id="password"
-                  placeholder="Enter your password"
+                  placeholder={t("login.EnterPassword")}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
               </div>
         </div>
-        <button type="submit" className="login-button">Login</button>
-      </form>
-      <p>Don't have an account? <a href="/register">Register here</a></p>
-    </div>
+        <button type="submit" className="login-button">{t("login.loginButton")}</button>
+        </form>
+        <p>{t("login.noAccount")} <a href="/register">{t("login.registerHere")}</a></p>
+        </div>
 
     {/* Info Box */}
     <div className="info-box">
-      <h2>Welcome Back!</h2>
-      <p>Log in to access your account and explore amazing features.</p>
+    <h2>{t("login.welcomeBack")}</h2>
+    <p>{t("login.welcomeMessage")}</p>
     </div>
   </div>
 </div>

@@ -12,7 +12,7 @@ import { useTranslation } from "react-i18next";
 import "@ui5/webcomponents-fiori/dist/illustrations/tnt/SessionExpiring.js";
 import "@ui5/webcomponents-fiori/dist/illustrations/tnt/SessionExpired.js";
 import "@ui5/webcomponents-fiori/dist/illustrations/AllIllustrations.js";
-
+import { useNavigate } from "react-router-dom";
 interface DialogProps {
   isOpen: boolean;
   handleClose: () => void;
@@ -32,12 +32,22 @@ const SessionTimeoutDialog: FunctionComponent<DialogProps> = ({
     Hooks
   */
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
   const [counter, setCounter] = useState(sessionTimeout * 60);
+
   useEffect(() => {
     counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
   }, [counter]);
 
   const isTimedOut = counter < 1;
+  useEffect(() => {
+    if (isTimedOut) {
+      // Redirect to the login page when the session times out
+      navigate("/login");
+    }
+  }, [isTimedOut, navigate]);
+  
   /*
     Handler Functions
   */
@@ -92,7 +102,7 @@ const SessionTimeoutDialog: FunctionComponent<DialogProps> = ({
           subtitleText={t("sessionExpiring.subtitleText")! + secondsToTime(counter)}
         />
       )}
-      {isTimedOut && (
+     {isTimedOut && (
         <IllustratedMessage
           name={IllustrationMessageType.TntSessionExpired}
           data-testid="session-expired"

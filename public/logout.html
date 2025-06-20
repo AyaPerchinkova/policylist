@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <title>Logout Page</title>
     <script
-      id="aya-ui-bootstrap"
-      src="https://ui5.aya.com/resources/aya-ui-core.js"
-      data-aya-ui-theme="sap_horizon"
-      data-aya-ui-libs="aya.m, aya.f"
-      data-aya-ui-async="true"
+      id="sap-ui-bootstrap"
+      src="https://ui5.sap.com/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_horizon"
+      data-sap-ui-libs="sap.m, sap.f"
+      data-sap-ui-async="true"
     ></script>
     <script>
-      aya.ui.getCore().attachInit(function () {
-        aya.ui.require(
-          ["aya/m/Page", "aya/m/Button", "aya/f/IllustratedMessage", "aya/f/library", "aya/m/App"],
+      sap.ui.getCore().attachInit(function () {
+        sap.ui.require(
+          ["sap/m/Page", "sap/m/Button", "sap/f/IllustratedMessage", "sap/f/library", "sap/m/App"],
           function (Page, Button, IllustratedMessage, fLibrary, App) {
             var IllustratedMessageType = fLibrary.IllustratedMessageType;
 

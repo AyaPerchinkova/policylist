@@ -39,6 +39,8 @@ const ViewDialog: React.FC<ViewDialogProps> = ({ open, onClose, onSave, policyLi
   );
   const [region, setRegion] = useState<string>(policyList?.region || ''); // Add region state
   const [username, setUsername] = useState<string>('');
+  const [errorDialogOpen, setErrorDialogOpen] = useState(false); // State for error dialog
+  const [errorMessage, setErrorMessage] = useState(''); // State for error message
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -74,8 +76,11 @@ const ViewDialog: React.FC<ViewDialogProps> = ({ open, onClose, onSave, policyLi
 
       if (!isValidRanges) {
         // Display an error or prevent saving if any range is invalid
-        alert(t('viewDialog.invalidIPRange')); // Translated error message
-        return;
+           // Set the error message and open the error dialog
+          setErrorMessage(t('viewDialog.invalidIPRange')); // Translated error message
+          setErrorDialogOpen(true); // Open the error dialog
+      return;
+
       }
 
       const editedPolicyList: PolicyList = {
@@ -119,7 +124,9 @@ const ViewDialog: React.FC<ViewDialogProps> = ({ open, onClose, onSave, policyLi
     if (isValidCIDR) {
       setIpRanges((prevRanges) => [...prevRanges, newRange]);
     } else {
-      alert(t('viewDialog.invalidIPRange')); // Translated error message
+          // Set the error message and open the error dialog
+    setErrorMessage(t('viewDialog.invalidIPRange')); // Translated error message
+    setErrorDialogOpen(true); // Open the error dialog
     }
   };
 
@@ -140,6 +147,7 @@ const ViewDialog: React.FC<ViewDialogProps> = ({ open, onClose, onSave, policyLi
   };
 
   return (
+    <>
     <Dialog
       open={open}
       onAfterClose={onClose}
@@ -235,6 +243,24 @@ const ViewDialog: React.FC<ViewDialogProps> = ({ open, onClose, onSave, policyLi
         </FormItem> 
       </Form>
     </Dialog>
+     {/* Error Dialog */}
+     <Dialog
+      open={errorDialogOpen}
+      onAfterClose={() => setErrorDialogOpen(false)} // Close the dialog when dismissed
+      headerText={t("viewDialog.error")} // Translated header text
+      style={{ width: '30%' }}
+    >
+      <div style={{ padding: '1rem' }}>
+        <p>{errorMessage}</p>
+        <Button
+          design={ButtonDesign.Emphasized}
+          onClick={() => setErrorDialogOpen(false)} // Close the dialog on button click
+        >
+          {t("viewDialog.ok")} {/* Translated "OK" button */}
+        </Button>
+      </div>
+    </Dialog>
+  </>
   );
 };
 

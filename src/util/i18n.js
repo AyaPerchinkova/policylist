@@ -51,6 +51,9 @@ const SUPPORTED_LANGUAGES = {
       "policyList.exportPDF": "Export PDF",
       "policyList.viewRegionChart": "Region Chart",
       "policyDistribution": "Policy Distribution",
+      "viewDialog.error": "Error", // Header for the error dialog
+"viewDialog.ok": "OK", // Button text for confirming the error dialog
+"viewDialog.selectRegion": "Select Region", // Placeholder for region selection
       "filter.all": "All",
       "filter.allow": "Allow",
       "filter.block": "Block",
@@ -69,6 +72,17 @@ const SUPPORTED_LANGUAGES = {
       "viewDialog.name": "Name",
       "viewDialog.ipRanges": "IP Ranges",
       "viewDialog.policyType": "Policy Type",
+      "shell.export": "Export", // Text for the export button
+"shell.theme": "Theme", // Text for the theme button
+"shell.logOut": "Log Out", // Text for the log out button
+"shell.horizonMorning": "Horizon Morning", // Theme option
+"shell.horizonEvening": "Horizon Evening", // Theme option
+"shell.horizonHCB": "Horizon HCB", // Theme option
+"shell.quartzLight": "Quartz Light", // Theme option
+"shell.quartzDark": "Quartz Dark", // Theme option
+"shell.exportCSV": "Export to CSV", // Export option
+"shell.exportPDF": "Export to PDF", // Export option
+"shell.logOutConfirmation": "Are you sure you want to log out?", // Confirmation dialog text
       "viewDialog.allow": "Allow",
       "viewDialog.block": "Block",
       "viewDialog.restricted": "Restricted",
@@ -81,6 +95,40 @@ const SUPPORTED_LANGUAGES = {
       "viewDialog.ANZ": "ANZ",
       "viewDialog.invalidIPRange": "Invalid IP range. Please enter valid CIDR formats for all ranges.",
       "regionDistribution": "Region Distribution",
+      "login.title": "Login",
+      "login.username": "Username",
+      "login.password": "Password",
+      "login.loginButton": "Login",
+      "login.noAccount" : "Don't have an account?",
+      "login.registerHere": "Register here",
+      "login.welcomeBack" : "Welcome back to Policy Manager",
+      "login.welcomeMessage":"Log in to access your account and explore amazing features.",
+      "login.EnterPassword": "Enter your password",
+      "login.EnterUsername": "Enter your username",
+      "register.title": "Register",
+      "register.username": "Username",
+      "register.password": "Password",
+      "register.email": "Email",
+      "register.confirmPassword": "Confirm Password",
+      "register.registerButton": "Register",
+      "register.alreadyHaveAccount": "Already have an account?",
+      "register.loginHere": "Login here",
+      "register.welcomeTitle": "Welcome to Policy Manager",
+      "register.welcomeMessage": "Join us today and explore amazing features tailored just for you!",
+      "register.emailRequired": "Email is required.",
+      "register.invalidEmail": "Please enter a valid email address.",
+
+      "register.createAccountMessage": "Create your account to manage policies and access exclusive features.",
+      "register.EnterUsername": "Enter your username",
+      "register.EnterPassword": "Enter your password",
+      "register.EnterEmail": "Enter your email",
+      "register.EnterConfirmPassword": "Confirm your password",
+      "register.passwordMismatch": "Passwords do not match. Please try again.",
+      "register.invalidUsername": "Invalid username. Please use alphanumeric characters only.",
+      "register.invalidPassword": "Invalid password. Please ensure it meets the required criteria.",
+      "register.successMessage": "Registration successful! Redirecting to home...",
+      "register.errorMessage": "Registration failed. Please try again later.",
+
 }
   },
   bg: {
@@ -119,6 +167,17 @@ const SUPPORTED_LANGUAGES = {
       "policyList.id": "ID",
       "policyList.createdAt": "Създаден на",
       "policyList.updatedAt": "Обновен на",
+      "shell.export": "Експорт", // Text for the export button
+      "shell.theme": "Тема", // Text for the theme button
+      "shell.logOut": "Изход", // Text for the log out button
+      "shell.horizonMorning": "Хоризонт Сутрин", // Theme option
+      "shell.horizonEvening": "Хоризонт Вечер", // Theme option
+      "shell.horizonHCB": "Хоризонт HCB", // Theme option
+      "shell.quartzLight": "Кварц Светъл", // Theme option
+      "shell.quartzDark": "Кварц Тъмен", // Theme option
+      "shell.exportCSV": "Експорт в CSV", // Export option
+      "shell.exportPDF": "Експорт в PDF", // Export option
+      "shell.logOutConfirmation": "Сигурни ли сте, че искате да излезете?", // Confirmation dialog text
       "policyList.size": "Размер",
       "policyList.region": "Регион",
       "policyList.view": "Преглед",
@@ -159,8 +218,43 @@ const SUPPORTED_LANGUAGES = {
       "viewDialog.LATAM": "LATAM",
       "viewDialog.MEA": "MEA",
       "viewDialog.ANZ": "ANZ",
+      "viewDialog.error": "Грешка", // Header for the error dialog
+      "viewDialog.ok": "ОК", // Button text for confirming the error dialog
+      "viewDialog.selectRegion": "Изберете регион", // Placeholder for region selection
       "viewDialog.invalidIPRange": "Невалиден IP обхват. Моля, въведете валидни CIDR формати за всички обхвати.",
       "regionDistribution": "Разпределение по региони",
+      "login.title": "Вход",
+      "login.username": "Потребителско име",
+      "login.password": "Парола",
+      "login.loginButton": "Вход",
+      "login.noAccount" : "Нямате акаунт?",
+      "login.registerHere": "Регистрирайте се тук",
+      "login.welcomeBack" : "Добре дошли обратно",
+      "login.welcomeMessage":"Влезте, за да получите достъп до акаунта си и да разгледате невероятни функции.",
+      "login.EnterPassword": "Въведете паролата си",
+      "login.EnterUsername": "Въведете потребителското си име",
+      "register.title": "Регистрация",
+      "register.username": "Потребителско име",
+      "register.email": "Имейл",
+      "register.password": "Парола",
+      "register.confirmPassword": "Потвърдете паролата",
+      "register.registerButton": "Регистрация",
+      "register.terms": "С регистрирането си, вие се съгласявате с нашите",
+      "register.termsLink": "Условия за ползване",
+      "register.privacyLink": "Политика за поверителност",
+      "register.alreadyHaveAccount": "Вече имате акаунт?",
+      "register.loginHere": "Влезте тук",
+      "register.welcomeTitle": "Добре дошли в нашия мениджър на политики",
+      "register.welcomeMessage": "Присъединете се днес и разгледайте невероятни функции, създадени специално за вас!",
+      "register.emailRequired": "Имейлът е задължителен.",
+      "register.invalidEmail": "Моля, въведете валиден имейл адрес.",
+      "register.passwordMismatch": "Паролите не съвпадат.",
+      "register.successMessage": "Регистрацията е успешна! Пренасочване към началната страница...",
+      "register.registrationFailed": "Регистрацията не бе успешна. Моля, опитайте отново.",
+      "register.EnterEmail": "Въведете вашия имейл",
+      "register.EnterPassword": "Въведете вашата парола",
+      "register.EnterUsername": "Въведете вашето потребителско име",
+      "register.EnterConfirmPassword": "Потвърдете вашата парола"
     },
   },
 };

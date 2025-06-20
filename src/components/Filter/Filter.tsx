@@ -13,16 +13,16 @@ const Filter: React.FC<FilterProps> = ({ selectedType, handleTypeChange }) => {
   return (
     <div className="filter-container" data-testid="filter-component">
       <Select onChange={handleTypeChange} data-testid="filter-dropdown">
-        <Option data-aya-ui-value="All" data-testid="option-all">
+        <Option data-sap-ui-value="All" data-testid="option-all">
           {t("filter.all")} {/* Translated */}
         </Option>
-        <Option data-aya-ui-value="allow" data-testid="option-allow">
+        <Option data-sap-ui-value="allow" data-testid="option-allow">
           {t("filter.allow")} {/* Translated */}
         </Option>
-        <Option data-aya-ui-value="block" data-testid="option-block">
+        <Option data-sap-ui-value="block" data-testid="option-block">
           {t("filter.block")} {/* Translated */}
         </Option>
-        <Option data-aya-ui-value="restricted" data-testid="option-restricted">
+        <Option data-sap-ui-value="restricted" data-testid="option-restricted">
           {t("filter.restricted")} {/* Translated */}
         </Option>
       </Select>

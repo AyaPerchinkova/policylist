@@ -4,8 +4,11 @@ import { registerUser } from './listSlice'; // Adjust the import based on your a
 import './RegisterPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 
 const RegisterPage: React.FC = () => {
+  const { t } = useTranslation();
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -59,17 +62,17 @@ const RegisterPage: React.FC = () => {
 
       <div className="register-box">
       <div className="register-form">
-        <h2>Register</h2>
-        {error && <p className="error">{error}</p>}
+      <h2>{t("register.title")}</h2>
+      {error && <p className="error">{error}</p>}
         {success && <p className="success">{success}</p>}
         <form onSubmit={handleRegister}>
           <div className="form-group">
-            <label htmlFor="username">Username</label>
-            <div className="input-with-icon">
+          <label htmlFor="username">{t("register.username")}</label>
+          <div className="input-with-icon">
             <FontAwesomeIcon icon={faUser} className="input-icon" />
             <input
               type="text"
-              placeholder="Enter your username"
+              placeholder={t("register.username")}
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -78,12 +81,12 @@ const RegisterPage: React.FC = () => {
           </div>
           </div>
           <div className="form-group">
-        <label htmlFor="email">Email</label>
-        <div className="input-with-icon">
+          <label htmlFor="email">{t("register.email")}</label>
+          <div className="input-with-icon">
           <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
           <input
             type="email"
-            placeholder="Enter your email"
+            placeholder={t("register.EnterEmail")}
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -93,12 +96,12 @@ const RegisterPage: React.FC = () => {
         </div>
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <div className="input-with-icon">
+        <label htmlFor="password">{t("register.password")}</label>
+        <div className="input-with-icon">
             <FontAwesomeIcon icon={faLock} className="input-icon" />
             <input
               type="password"
-              placeholder="Enter your password"
+              placeholder={t("register.EnterPassword")}
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -107,8 +110,8 @@ const RegisterPage: React.FC = () => {
           </div>
         </div>
         <div className="form-group">
-          <label htmlFor="confirmPassword">Confirm Password</label>
-          <div className="input-with-icon">
+        <label htmlFor="confirmPassword">{t("register.confirmPassword")}</label>
+        <div className="input-with-icon">
             <FontAwesomeIcon icon={faLock} className="input-icon" />
             <input
               type="password"
@@ -120,17 +123,14 @@ const RegisterPage: React.FC = () => {
             />
           </div>
         </div>
-          <button type="submit" className="register-button">Register</button>
+        <button type="submit" className="register-button">{t("register.registerButton")}</button>
         </form>
-        <p className="terms">
-          By registering, you agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.
-        </p>
         <p>Already have an account? <a href="/login">Login here</a></p>
       </div>
     </div>
     <div className="info-box">
-      <h2>Welcome to Our Policy Manager</h2>
-      <p>Join us today and explore amazing features tailored just for you!</p>
+    <h2>{t("register.welcomeTitle")}</h2>
+    <p>{t("register.welcomeMessage")}</p>
     </div>
     </div>
     </div>

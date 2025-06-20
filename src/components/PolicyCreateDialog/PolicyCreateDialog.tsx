@@ -229,7 +229,7 @@ const CreateDialog: React.FunctionComponent<DialogProps> = ({ isOpen, createList
               </Option>
               </Select>
             </FormItem>
-            <FormItem label={<Label required showColon>{t("region")}</Label>}>
+            <FormItem label={<Label required showColon>{t("Region")}</Label>}>
               <Select
                 data-testid="select-region"
                 required
