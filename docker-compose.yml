@@ -1,0 +1,88 @@
+version: "3.8"
+
+services:
+  decision-api:
+    container_name: decision-api
+    image: ayap/decision-maker:latest
+    environment:
+      - FIRESTORE_PROJECT_ID=policies-446415
+      - FIRESTORE_COLLECTION=aya
+      - FIRESTORE_USER_COLLECTION=users
+      - JWT_SECRET=[[[[[]]]]]
+      - SERVER_HOST=0.0.0.0
+      - SERVER_PORT=8082
+      - API_NAME=decision-api
+      - GOOGLE_APPLICATION_CREDENTIALS=/cred/gac.json
+      - MONGODB_URI=mongodb://root:example@mongodb:27017/decisionDB?authMechanism=DEFAULT&directConnection=true
+    ports:
+      - "8082:8082"
+    volumes:
+      - /Users/aya/Downloads/policies-446415-1ceeb9229c94.json:/cred/gac.json
+    networks:
+      - decision-network
+    depends_on:
+      - mongodb
+  decision-ui:
+    container_name: decision-ui
+    image: nginx:alpine
+    volumes:
+       - ./cmd/decision-ui:/usr/share/nginx/html:ro
+       - ./cmd/decision-ui/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "3001:80"
+    depends_on:
+      - decision-api
+    networks:
+    - decision-network
+  ui-api:
+    container_name: ui-api
+    image: ayap/decision-maker:latest
+    environment:
+      - FIRESTORE_PROJECT_ID=policies-446415
+      - FIRESTORE_COLLECTION=aya
+      - FIRESTORE_USER_COLLECTION=users
+      - JWT_SECRET=[[[[[]]]]]
+      - SERVER_HOST=0.0.0.0
+      - SERVER_PORT=8081
+      - API_NAME=ui-api
+      - GOOGLE_APPLICATION_CREDENTIALS=/cred/gac.json
+      - MONGODB_URI=mongodb://root:example@mongodb:27017/decisionDB?authMechanism=DEFAULT&directConnection=true
+    ports:
+      - "8081:8081"
+    volumes:
+      - /Users/aya/Downloads/policies-446415-1ceeb9229c94.json:/cred/gac.json
+    depends_on:
+      - mongodb
+  ui:
+    container_name: ui
+    image: ayap/policy-list-ui
+    environment:
+      - API_URL=ui-api:8081
+    # This command uses envsubst to substitute the value of the API_URL environment variable into the Nginx configuration template. 
+    # The template is likely located at /etc/nginx/conf.d/default.conf.template, and the result is written to /etc/nginx/conf.d/default.conf, exec nginx -g 'daemon off;':  this command starts Nginx in the foreground with the specified configuration file 
+    command: sh -c "envsubst '$$API_URL' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"
+    depends_on:
+      - ui-api
+    ports:
+      - "3000:3000"
+
+  mongodb:
+    container_name: mongodb
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+    - decision-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  decision-network:
+    driver: bridge

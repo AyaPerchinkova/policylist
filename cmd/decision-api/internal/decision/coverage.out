@@ -1,0 +1,17 @@
+mode: set
+github.tools.sap/I741559/decisionCLI/cmd/decisionAPI/internal/decision/presenter.go:26.47,30.2 1 1
+github.tools.sap/I741559/decisionCLI/cmd/decisionAPI/internal/decision/presenter.go:32.45,36.53 3 1
+github.tools.sap/I741559/decisionCLI/cmd/decisionAPI/internal/decision/presenter.go:36.53,40.3 3 1
+github.tools.sap/I741559/decisionCLI/cmd/decisionAPI/internal/decision/presenter.go:42.2,43.16 2 1
+github.tools.sap/I741559/decisionCLI/cmd/decisionAPI/internal/decision/presenter.go:43.16,47.3 3 1
+github.tools.sap/I741559/decisionCLI/cmd/decisionAPI/internal/decision/presenter.go:49.2,54.37 4 1
+github.tools.sap/I741559/decisionCLI/cmd/decisionAPI/internal/decision/presenter.go:54.37,57.3 2 0
+github.tools.sap/I741559/decisionCLI/cmd/decisionAPI/internal/decision/presenter.go:58.2,58.39 1 1
+github.tools.sap/I741559/decisionCLI/cmd/decisionAPI/internal/decision/presenter.go:58.39,62.3 3 1
+github.tools.sap/I741559/decisionCLI/cmd/decisionAPI/internal/decision/presenter.go:64.2,64.17 1 1
+github.tools.sap/I741559/decisionCLI/cmd/decisionAPI/internal/decision/presenter.go:64.17,65.29 1 1
+github.tools.sap/I741559/decisionCLI/cmd/decisionAPI/internal/decision/presenter.go:65.29,68.4 2 1
+github.tools.sap/I741559/decisionCLI/cmd/decisionAPI/internal/decision/presenter.go:69.3,70.9 2 0
+github.tools.sap/I741559/decisionCLI/cmd/decisionAPI/internal/decision/presenter.go:72.2,72.28 1 1
+github.tools.sap/I741559/decisionCLI/cmd/decisionAPI/internal/decision/presenter.go:72.28,75.3 2 0
+github.tools.sap/I741559/decisionCLI/cmd/decisionAPI/internal/decision/presenter.go:76.2,77.8 2 1

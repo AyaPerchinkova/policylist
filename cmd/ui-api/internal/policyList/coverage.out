@@ -1,0 +1,27 @@
+mode: set
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:27.48,31.2 1 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:32.44,34.51 2 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:34.51,38.3 3 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:39.2,39.56 1 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:39.56,43.3 3 0
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:45.2,46.16 2 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:46.16,50.3 3 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:52.2,52.78 1 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:54.44,58.51 3 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:58.51,62.3 3 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:64.2,65.16 2 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:65.16,66.29 1 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:66.29,68.4 1 0
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:69.3,71.9 3 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:74.2,74.73 1 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:76.41,81.16 3 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:81.16,82.29 1 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:82.29,84.4 1 0
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:85.3,87.9 3 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:90.2,90.36 1 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:92.44,96.16 3 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:96.16,100.3 3 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:101.2,101.73 1 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:103.53,105.34 2 1
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:105.34,110.3 3 0
+github.tools.sap/I741559/decisionCLI/cmd/restService/internal/decision/presenter.go:111.2,111.14 1 1

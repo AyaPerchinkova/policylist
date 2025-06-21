@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decision API UI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px;
+      font-size: 16px;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 48px;
+      font-weight: bold;
+    }
+    .success {
+      color: green;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Decision API</h1>
+  <form id="checkIPForm">
+    <input type="text" id="username" placeholder="Username" required />
+    <input type="text" id="policyListID" placeholder="Policy List ID" required />
+    <input type="text" id="ip" placeholder="IP Address" required />
+    <button type="submit">Check</button>
+  </form>
+  <div id="result"></div>
+
+  <script>
+    document.getElementById('checkIPForm').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const username = document.getElementById('username').value;
+  const policyListID = document.getElementById('policyListID').value;
+  const ip = document.getElementById('ip').value;
+
+  const resultDiv = document.getElementById('result');
+  resultDiv.textContent = 'Checking...';
+  resultDiv.className = ''; // Reset any previous styles
+
+  try {
+    const response = await fetch(`http://localhost:3001/checkIP/${policyListID}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username: username,
+        ip: ip
+      }),
+    });
+    console.log('Response:', response); // Log the response object for debugging
+
+    const data = await response.json();
+    console.log('Data:', data); // Log the response data for debugging
+
+    if (response.ok) {
+      // Check if the message contains "allowed", "blocked", or "restricted"
+      if (data.message && data.message.includes('allowed')) {
+        resultDiv.textContent = '✔ IP is allowed'; // Green checkmark
+        resultDiv.className = 'success';
+      } else if (data.message && data.message.includes('blocked')) {
+        resultDiv.textContent = '✖ IP is blocked'; // Red X
+        resultDiv.className = 'error';
+      } else if (data.message && data.message.includes('restricted')) {
+        resultDiv.textContent = '⚠ IP is restricted'; // Warning icon
+        resultDiv.className = 'warning';
+      } else {
+        resultDiv.textContent = '✖ IP is blocked';
+        resultDiv.className = 'error';
+      }
+    } else {
+      // Handle specific errors
+      if (data.message === 'User does not exist') {
+        resultDiv.textContent = '❌ No such user exists'; // Custom message for missing user
+        resultDiv.className = 'error';
+      } else if (data.message) {
+        resultDiv.textContent = `❌ ${data.message}`; // Display the error message from the backend
+      } else {
+        resultDiv.textContent = '❌ An unexpected error occurred'; // Fallback for undefined errors
+      }
+      resultDiv.className = 'error';
+    }
+  } catch (error) {
+    console.error('Error:', error); // Log the error for debugging
+    resultDiv.textContent = 'Error: Unable to connect to the API.';
+    resultDiv.className = 'error';
+  }
+});
+</script>
+</body>
+</html>
