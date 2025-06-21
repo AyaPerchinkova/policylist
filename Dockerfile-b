@@ -1,0 +1,16 @@
+FROM golang:1.23 AS builder
+
+WORKDIR /decisionAPI
+COPY ./ ./
+
+
+RUN GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -mod vendor -o ui-api ./cmd/ui-api/main.go
+RUN GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -mod vendor -o decision-api ./cmd/decision-api/main.go
+
+FROM alpine:3.18
+
+COPY --from=builder  /decisionAPI/ui-api /bin/ui-api
+COPY --from=builder /decisionAPI/decision-api /bin/decision-api
+
+
+CMD /bin/${API_NAME}
